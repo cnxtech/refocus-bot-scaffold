@@ -13,7 +13,7 @@
     "test-dev": "nodemon --ext js --watch ./ --exec 'mocha ./test'"
   },
   "dependencies": {
-    "@salesforce/refocus-bdk": "^1.0.1",
+    "@salesforce/refocus-bdk": "file:./lib/salesforce-refocus-bdk-1.1.1.tgz",
     "express": "4.10.2",
     "jsforce": "^1.7.1",
     "lodash": "^4.17.4",
@@ -24,7 +24,8 @@
     "react-dom": "^15.6.1",
     "socket.io": "1.2.0",
     "socket.io-client": "^2.0.3",
-    "superagent": "3.6.0"
+    "superagent": "3.6.0",
+    "superagent-proxy": "^1.0.2"
   },
   "babel": {
     "presets": [
