@@ -12,11 +12,10 @@
     "test-dev": "nodemon --ext js --watch ./ --exec 'mocha ./test'"
   },
   "dependencies": {
-    "@salesforce/refocus-bdk": "^1.0.1",
+    "@salesforce/refocus-bdk": "file:./lib/salesforce-refocus-bdk-1.1.1.tgz",
     "express": "4.10.2",
     "jsforce": "^1.7.1",
     "lodash": "^4.17.4",
-    "jsforce": "^1.7.1",
     "mocha": "^3.5.3",
     "moment": "^2.18.1",
     "prop-types": "^15.5.10",

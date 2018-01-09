@@ -14,7 +14,6 @@
  */
 
 const React=require('react');
-const bdk = require('../../lib/refocus-bdk.js');
 
 class App extends React.Component{
 
