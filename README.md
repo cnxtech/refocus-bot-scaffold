@@ -1,7 +1,8 @@
 # Refocus Bot Scaffold
 
 ## Overview
-This repo is a scaffold project to help develop bots for refocus rooms using the Refocus Bot Development Kit (BDK) (/lib/refocus-bdk.js). Refocus rooms, described here (https://salesforce.quip.com/OeDwAuLM0tQA), are collaberative channels in which people and bots interact to resolve service issues. So this project is to help develop bots for Refocus that will have ablity to interact with external APIs and the Refocus rooms.
+This repo is a scaffold project to help develop bots for refocus rooms using the Refocus Bot Development Kit [BDK](git.soma.salesforce.com/Refocus-Bots/refocus-bdk). Refocus rooms, described here (https://salesforce.quip.com/OeDwAuLM0tQA), are collaberative channels in which people and bots interact to resolve service issues. So this project is to help develop bots for Refocus that will have ablity to interact with external APIs and the Refocus rooms.
+To read a step by step guide how to create a new Bot go to [this wiki.](https://git.soma.salesforce.com/pages/Refocus-Bots/Docs/)
 
 ## Background
 ### Terminology
@@ -30,20 +31,26 @@ This repo is a scaffold project to help develop bots for refocus rooms using the
 **Shared Context** - Shared Context is a room setting (denoted sharedContext) that syncs one bot data to another bot data. This is a way to allow bots to get data from other bots without.
 
 ### Repo Structure
-_**/**_
---> _.gitignore_: Files to ignore on git commits
---> _config.js_: Some basic configurations
---> _index.js_: Bot server listeners and logic are identified here
---> _package.json_: Bot static information
---> _README.md_: Project explainations
---> _webpack.config.js_: Webpack configurations
---> _**/lib**_: This is where helper files should go
---> _**/web**_: Bot UI development done here
------> _**/components**_: React UI elements stored here
---------> _App.jsx_: Entry point for Bot UI
------> _**/dist**_: Generated bundle that will be uploaded to Refocus
------> _index.html_: Basic web structure for Bot UI
------> _index.js_: Bot UI dynamic logic
+```text
+├── .gitignore - Files to ignore on git commits
+├── README.md - Project explainations
+├── config.js - Some basic configurations
+├── index.js - Bot server listeners and logic are identified here
+├── lib - This is where helper files should go
+│   └── salesforce-refocus-bdk-1.1.1.tgz
+├── node_modules
+├── package.json - Bot static information
+├── web - Bot UI development done here
+│   ├── components - React UI elements stored here
+│   │   └── App.jsx - Entry point for Bot UI
+│   ├── dist - Generated bundle that will be uploaded to Refocus
+│   │   ├── bot.zip
+│   │   ├── index.html
+│   │   └── index_bundle.js
+│   ├── index.html - Basic web structure for Bot UI
+│   └── index.js - Bot UI dynamic logic
+└── webpack.config.js - Webpack configurations
+```
 
 ## Getting Started
 
