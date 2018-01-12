@@ -46,6 +46,9 @@ _**/**_
 -----> _index.js_: Bot UI dynamic logic
 
 ## Getting Started
+
+Note: this project supports [dotenv](https://github.com/motdotla/dotenv). Put your environmental variables into `.env` file or export into your shell session if desired.
+
 ### Test Bot Locally without Refocus
 1.  Clone this repo
 2.	Add any server side code you want to bot.js
