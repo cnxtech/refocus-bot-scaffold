@@ -1,7 +1,8 @@
 # Refocus Bot Scaffold
 
 ## Overview
-This repo is a scaffold project to help develop bots for refocus rooms using the Refocus Bot Development Kit (BDK) (/lib/refocus-bdk.js). Refocus rooms, described here (https://salesforce.quip.com/OeDwAuLM0tQA), are collaberative channels in which people and bots interact to resolve service issues. So this project is to help develop bots for Refocus that will have ablity to interact with external APIs and the Refocus rooms.
+This repo is a scaffold project to help develop bots for refocus rooms using the Refocus Bot Development Kit [BDK](git.soma.salesforce.com/Refocus-Bots/refocus-bdk). Refocus rooms, described here (https://salesforce.quip.com/OeDwAuLM0tQA), are collaberative channels in which people and bots interact to resolve service issues. So this project is to help develop bots for Refocus that will have ablity to interact with external APIs and the Refocus rooms.
+To read a step by step guide how to create a new Bot go to [this wiki.](https://git.soma.salesforce.com/pages/Refocus-Bots/Docs/)
 
 ## Background
 ### Terminology
@@ -30,22 +31,31 @@ This repo is a scaffold project to help develop bots for refocus rooms using the
 **Shared Context** - Shared Context is a room setting (denoted sharedContext) that syncs one bot data to another bot data. This is a way to allow bots to get data from other bots without.
 
 ### Repo Structure
-_**/**_
---> _.gitignore_: Files to ignore on git commits
---> _config.js_: Some basic configurations
---> _index.js_: Bot server listeners and logic are identified here
---> _package.json_: Bot static information
---> _README.md_: Project explainations
---> _webpack.config.js_: Webpack configurations
---> _**/lib**_: This is where helper files should go
---> _**/web**_: Bot UI development done here
------> _**/components**_: React UI elements stored here
---------> _App.jsx_: Entry point for Bot UI
------> _**/dist**_: Generated bundle that will be uploaded to Refocus
------> _index.html_: Basic web structure for Bot UI
------> _index.js_: Bot UI dynamic logic
+```text
+├── .gitignore - Files to ignore on git commits
+├── README.md - Project explainations
+├── config.js - Some basic configurations
+├── index.js - Bot server listeners and logic are identified here
+├── lib - This is where helper files should go
+│   └── salesforce-refocus-bdk-1.1.1.tgz
+├── node_modules
+├── package.json - Bot static information
+├── web - Bot UI development done here
+│   ├── components - React UI elements stored here
+│   │   └── App.jsx - Entry point for Bot UI
+│   ├── dist - Generated bundle that will be uploaded to Refocus
+│   │   ├── bot.zip
+│   │   ├── index.html
+│   │   └── index_bundle.js
+│   ├── index.html - Basic web structure for Bot UI
+│   └── index.js - Bot UI dynamic logic
+└── webpack.config.js - Webpack configurations
+```
 
 ## Getting Started
+
+Note: this project supports [dotenv](https://github.com/motdotla/dotenv). Put your environmental variables into `.env` file or export into your shell session if desired.
+
 ### Test Bot Locally without Refocus
 1.  Clone this repo
 2.	Add any server side code you want to bot.js
@@ -60,11 +70,11 @@ _**/**_
 3.	Add any UI side code to web/index.js
 4.	Install and run Refocus https://salesforce.github.io/refocus/docs/04-quickstartlocal.html
 5.	Create a token https://salesforce.github.io/refocus/docs/10-security.html
-6.	Add token to Bot enviroment variables -  ```export TOKEN={{UI TOKEN from Step 5}}```
+6.	Add token to Bot enviroment variables -  ```echo "API_TOKEN={{UI TOKEN from Step 5}}" > .env ```
 7.	```npm login``` - You need to login to get salesforce/bdk
 8.	```npm start```
 9.	If it is your first install you will be returned a ```Authorization Token``` for sockets
-10.	Add authorization token to Bot enviroment variables -  ```export AUTH_TOKEN={{UI TOKEN from Step 9}}```
+10.	Add authorization token to Bot enviroment variables -  ```echo "SOCKET_TOKEN={{UI TOKEN from Step 9}}" >> .env```
 11.	```npm start```
 12. Create a RoomType in Refocus with your Bot added
 13. Create a Room in Refocus with your new RoomType
