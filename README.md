@@ -60,11 +60,11 @@ _**/**_
 3.	Add any UI side code to web/index.js
 4.	Install and run Refocus https://salesforce.github.io/refocus/docs/04-quickstartlocal.html
 5.	Create a token https://salesforce.github.io/refocus/docs/10-security.html
-6.	Add token to Bot enviroment variables -  ```export TOKEN={{UI TOKEN from Step 5}}```
+6.	Add token to Bot enviroment variables -  ```echo "API_TOKEN={{UI TOKEN from Step 5}}" > .env ```
 7.	```npm login``` - You need to login to get salesforce/bdk
 8.	```npm start```
 9.	If it is your first install you will be returned a ```Authorization Token``` for sockets
-10.	Add authorization token to Bot enviroment variables -  ```export AUTH_TOKEN={{UI TOKEN from Step 9}}```
+10.	Add authorization token to Bot enviroment variables -  ```echo "SOCKET_TOKEN={{UI TOKEN from Step 9}}" >> .env```
 11.	```npm start```
 12. Create a RoomType in Refocus with your Bot added
 13. Create a Room in Refocus with your new RoomType
