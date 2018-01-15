@@ -21,8 +21,8 @@ const http = require('http');
 const io = require('socket.io-client');
 const env = process.env.NODE_ENV || 'dev';
 const PORT = process.env.PORT || 5000;
-const socketToken = process.env.SOCKET_TOKEN;
 const config = require('./config.js')[env];
+const { socketToken } = config;
 const packageJSON = require('./package.json');
 const bdk = require('@salesforce/refocus-bdk')(config);
 
