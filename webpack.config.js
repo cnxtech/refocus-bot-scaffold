@@ -1,9 +1,10 @@
-var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin'); //creates index.html folder and puts it in dist folder
-var webpack = require('webpack');
-var ZipPlugin = require('zip-webpack-plugin');
-var env = process.env.NODE_ENV || 'dev';
-var url = require('./config.js')[env].refocusUrl;
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin'); //creates index.html folder and puts it in dist folder
+const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
+const ZipPlugin = require('zip-webpack-plugin');
+const env = process.env.NODE_ENV || 'dev';
+const url = require('./config.js')[env].refocusUrl;
 const botName = require('./package.json').name;
 
 var config = {
@@ -55,20 +56,19 @@ var config = {
       name: botName,
     }),
     new ZipPlugin({
-          filename: 'bot.zip',
-          include: [/\.js$/, /\.html$/],
-          exclude: ['public']
-    })
+      filename: 'bot.zip',
+      include: [/\.js$/, /\.html$/],
+      exclude: ['public']
+    }),
+    new Dotenv({
+      path: './.env',
+      safe: false
+    }),
   ]
 };
 
 if(process.env.NODE_ENV === 'production'){
   config.plugins.push(
-    new webpack.DefinePlugin({ //allows us to set a property on process.env
-      'process.env': {
-        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-      }
-    }),
     new webpack.optimize.UglifyJsPlugin()
   );
 }
