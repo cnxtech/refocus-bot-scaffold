@@ -60,9 +60,11 @@ Note: this project supports [dotenv](https://github.com/motdotla/dotenv). Put yo
 1.  Clone this repo
 2.	Add any server side code you want to bot.js
 3.	Add any UI side code to web/index.js
-4.	```npm login``` - You need to login to get salesforce/bdk
-5.	```npm start```
-6.	Test locally (default port 5000)
+4.  Comment-out ``bdk.installOrUpdateBot(packageJSON);`` from ./index.js
+5.	```npm login``` - You need to login to get salesforce/bdk
+6.	```npm install```
+7.	```npm start```
+8.	Test locally (default port 5000)
 
 ### Test Bot Locally with Refocus
 1.  Clone this repo
@@ -72,13 +74,14 @@ Note: this project supports [dotenv](https://github.com/motdotla/dotenv). Put yo
 5.	Create a token https://salesforce.github.io/refocus/docs/10-security.html
 6.	Add token to Bot enviroment variables -  ```echo "API_TOKEN={{UI TOKEN from Step 5}}" > .env ```
 7.	```npm login``` - You need to login to get salesforce/bdk
-8.	```npm start```
-9.	If it is your first install you will be returned a ```Authorization Token``` for sockets
-10.	Add authorization token to Bot enviroment variables -  ```echo "SOCKET_TOKEN={{UI TOKEN from Step 9}}" >> .env```
-11.	```npm start```
-12. Create a RoomType in Refocus with your Bot added
-13. Create a Room in Refocus with your new RoomType
-14.	Go to ```https://host:port/rooms/``` and open your new room
+8.	```npm install```
+9.	```npm start```
+10.	If it is your first install you will be returned a ```Authorization Token``` for sockets
+11.	Add authorization token to Bot enviroment variables -  ```echo "SOCKET_TOKEN={{UI TOKEN from Step 9}}" >> .env```
+12.	```npm start```
+13. Create a RoomType in Refocus with your Bot added
+14. Create a Room in Refocus with your new RoomType
+15.	Go to ```https://host:port/rooms/``` and open your new room
 
 ###  Using Shared Context
 Under Construction
