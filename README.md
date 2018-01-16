@@ -68,7 +68,7 @@ Note: this project supports [dotenv](https://github.com/motdotla/dotenv). Put yo
 
 ### Test Bot Locally with Refocus
 1.  Clone this repo
-2.	Add any server side code you want to bot.js
+2.	Add any server side code you want to index.js
 3.	Add any UI side code to web/index.js
 4.	Install and run Refocus https://salesforce.github.io/refocus/docs/04-quickstartlocal.html
 5.	Create a token https://salesforce.github.io/refocus/docs/10-security.html
