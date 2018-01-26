@@ -62,7 +62,8 @@ var config = {
     }),
     new Dotenv({
       path: './.env',
-      safe: false
+      safe: false,
+      systemvars: true
     }),
   ]
 };
