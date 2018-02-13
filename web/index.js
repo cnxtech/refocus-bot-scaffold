@@ -24,9 +24,7 @@ const bdk = require('@salesforce/refocus-bdk')(config);
 const botName = require('../package.json').name;
 
 //Room Details
-var ROOMID = window.location.pathname.split('rooms/').length > 1 ? parseInt(window.location.pathname.split(
-  'rooms/')[1]) : 2;
-const roomId = parseInt(ROOMID); //ROOMID will be provided from the page DOM
+const roomId = bdk.getRoomId();
 
 //Event Handling
 document.body.addEventListener('refocus.room.settings', handleSettings, false);
