@@ -29,13 +29,6 @@ const bdk = require('@salesforce/refocus-bdk')(config);
 // Installs / Updates the Bot
 bdk.installOrUpdateBot(packageJSON);
 
-//Event Handling
-bdk.refocusConnect(app, socketToken);
-app.on('refocus.events', handleEvents);
-app.on('refocus.bot.actions', handleActions);
-app.on('refocus.bot.data', handleData);
-app.on('refocus.room.settings', handleSettings);
-
 /**
  * When a refocus.events is dispatch it is handled here.
  *
@@ -43,7 +36,7 @@ app.on('refocus.room.settings', handleSettings);
  * @return null
  */
 function handleEvents(event){
-  console.log('Event Activity', event);
+  bdk.log.debug('Event', event);
 }
 
 /**
@@ -53,7 +46,7 @@ function handleEvents(event){
  * @return null
  */
 function handleSettings(room){
-  console.log('Room Settings Activity', room);
+  bdk.log.debug('Settings Change', room);
 }
 
 /**
@@ -63,7 +56,7 @@ function handleSettings(room){
  * @return null
  */
 function handleData(data){
-  console.log('Bot Data Activity', data);
+  bdk.log.realtime('Bot Data', room);
 }
 
 /**
@@ -73,14 +66,20 @@ function handleData(data){
  * @return null
  */
 function handleActions(action){
-  console.log('Bot action Activity', action);
+  bdk.log.realtime('Bot Action', action);
 }
 
+//Event Handling
+bdk.refocusConnect(app, socketToken, packageJSON.name);
+app.on('refocus.events', handleEvents);
+app.on('refocus.bot.actions', handleActions);
+app.on('refocus.bot.data', handleData);
+app.on('refocus.room.settings', handleSettings);
 app.use(express.static('web/dist'));
 app.get('/*', function(req, res){
   res.sendFile(__dirname + '/web/dist/index.html');
 });
 
 http.Server(app).listen(PORT, function(){
-  console.log('listening on: ', PORT);
+  bdk.log.info('listening on: ', PORT);
 });
