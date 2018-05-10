@@ -68,3 +68,4 @@ Follows [semantic versioning](https://docs.npmjs.com/getting-started/semantic-ve
 
 * 1.0.0 First time README was set 
 * 1.0.1 Update bdk to 1.5.8
+* 1.0.2 Remove extra scripts
