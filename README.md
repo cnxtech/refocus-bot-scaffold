@@ -11,7 +11,7 @@ To read a step by step guide how to create a new Bot go to [this wiki.](https://
 * Templates bot server and bot UI for quick development
 
 ## Getting Started
-These instructions will enable you to have a copy of this project up and running on your local machine for development and testing purposes. 
+These instructions will enable you to have a copy of this project up and running on your local machine for development and testing purposes.
 
 Note: this project supports [dotenv](https://github.com/motdotla/dotenv). Put your environmental variables into `.env` file or export into your shell session if desired.
 
@@ -21,7 +21,8 @@ Note: this project supports [dotenv](https://github.com/motdotla/dotenv). Put yo
 ### Env Variables
 Note: If you want to test this locally you will need some environment variables:
 * ```API_TOKEN``` - Used for Requests to Refocus. Created in refoucs/tokens/new.
-* ```SOCKET_TOKEN``` (Returned Upon Installation) - Used for Socket Connection.
+* ```SOCKET_TOKEN``` (Returned Upon Installation) - Used for Socket Connection. REFOCUS_URL
+* ```REFOCUS_URL``` (OPTIONAL) - Used to specify which refocus instance to point to.
 
 ### Test Bot Locally without Refocus
 1.  Clone this repo
@@ -66,6 +67,8 @@ If you have any ideas on how this project could be improved, please feel free. T
 ## Release History
 Follows [semantic versioning](https://docs.npmjs.com/getting-started/semantic-versioning#semver-for-publishers)
 
-* 1.0.0 First time README was set 
+* 1.0.0 First time README was set
 * 1.0.1 Update bdk to 1.5.8
 * 1.0.2 Remove extra scripts
+* 1.0.3 Add env variable for refocus url
+
