@@ -26,12 +26,6 @@ const botName = require('../package.json').name;
 //Room Details
 const roomId = bdk.getRoomId();
 
-//Event Handling
-document.body.addEventListener('refocus.room.settings', handleSettings, false);
-document.getElementById(botName).addEventListener('refocus.bot.data', handleData, false);
-document.getElementById(botName).addEventListener('refocus.bot.actions', handleActions, false);
-document.getElementById(botName).addEventListener('refocus.events', handleEvents, false);
-
 /**
  * When a refocus.events is dispatch it is handled here.
  *
@@ -39,7 +33,7 @@ document.getElementById(botName).addEventListener('refocus.events', handleEvents
  * @return null
  */
 function handleEvents(event) {
-  console.log('Event Activity', event);
+  bdk.log.debug(botName + ' Event', event);
 }
 
 /**
@@ -49,7 +43,7 @@ function handleEvents(event) {
  * @return null
  */
 function handleSettings(room) {
-  console.log('Room Activity', room);
+  bdk.log.debug(botName + ' Settings Change', event);
 }
 
 /**
@@ -59,7 +53,7 @@ function handleSettings(room) {
  * @return null
  */
 function handleData(data) {
-  console.log('Bot Data Activity', data);
+  bdk.log.realtime(botName + ' Bot Data', data);
 }
 
 /**
@@ -69,7 +63,7 @@ function handleData(data) {
  * @return null
  */
 function handleActions(action) {
-  console.log('Bot Action Activity', action);
+  bdk.log.realtime(botName + ' Bot Action', action);
 }
 
 /*
@@ -88,5 +82,14 @@ function renderUI(){
     document.getElementById(botName)
   );
 }
+
+//Event Handling
+document.body.addEventListener('refocus.room.settings', handleSettings, false);
+document.getElementById(botName)
+  .addEventListener('refocus.bot.data', handleData, false);
+document.getElementById(botName)
+  .addEventListener('refocus.bot.actions', handleActions, false);
+document.getElementById(botName)
+  .addEventListener('refocus.events', handleEvents, false);
 
 init();

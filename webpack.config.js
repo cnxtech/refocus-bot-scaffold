@@ -69,7 +69,7 @@ var config = {
   ]
 };
 
-if (true) {
+if (process.env.NODE_ENV === 'production') {
   config.plugins.push(
     new Uglify()
   );
