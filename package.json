@@ -1,6 +1,6 @@
 {
   "name": "Bot-Development-Kit",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "Bot scaffold for refocus bot development",
   "url": "https://git.soma.salesforce.com/Refocus-Bots/refocus-bot-scaffold",
   "scripts": {
@@ -51,6 +51,7 @@
     "html-webpack-plugin": "^2.28.0",
     "sinon": "3.2.1",
     "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^1.2.7",
     "url-loader": "^0.5.9",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5",
