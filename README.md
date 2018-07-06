@@ -71,4 +71,4 @@ Follows [semantic versioning](https://docs.npmjs.com/getting-started/semantic-ve
 * 1.0.1 Update bdk to 1.5.8
 * 1.0.2 Remove extra scripts
 * 1.0.3 Add env variable for refocus url
-
+* 1.0.4 Uglify for production
