@@ -19,6 +19,7 @@ const express = require('express');
 const app = express();
 const http = require('http');
 const io = require('socket.io-client');
+const path = require('path');
 const env = process.env.NODE_ENV || 'dev';
 const PORT = process.env.PORT || 5000;
 const config = require('./config.js')[env];
@@ -69,17 +70,17 @@ function handleActions(action){
   bdk.log.realtime('Bot Action', action);
 }
 
-//Event Handling
+// Event Handling
 bdk.refocusConnect(app, socketToken, packageJSON.name);
 app.on('refocus.events', handleEvents);
 app.on('refocus.bot.actions', handleActions);
 app.on('refocus.bot.data', handleData);
 app.on('refocus.room.settings', handleSettings);
 app.use(express.static('web/dist'));
-app.get('/*', function(req, res){
-  res.sendFile(__dirname + '/web/dist/index.html');
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'web', 'dist', 'index.html'));
 });
 
-http.Server(app).listen(PORT, function(){
+http.Server(app).listen(PORT, () => {
   bdk.log.info('listening on: ', PORT);
 });
