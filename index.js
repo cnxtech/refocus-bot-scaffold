@@ -57,7 +57,7 @@ function handleSettings(room){
  * @return null
  */
 function handleData(data){
-  bdk.log.realtime('Bot Data', room);
+  bdk.log.realtime('Bot Data', data);
 }
 
 /**
