@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017, salesforce.com, inc.
+ * Copyright (c) 2018, salesforce.com, inc.
  * All rights reserved.
  * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root or
@@ -20,8 +20,8 @@ const app = express();
 const http = require('http');
 const io = require('socket.io-client');
 const path = require('path');
-const env = process.env.NODE_ENV || 'dev';
-const PORT = process.env.PORT || 5000;
+const { env } = require('./config.js');
+const PORT = require('./config.js').port;
 const config = require('./config.js')[env];
 const { socketToken } = config;
 const packageJSON = require('./package.json');
