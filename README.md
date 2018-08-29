@@ -73,3 +73,4 @@ Follows [semantic versioning](https://docs.npmjs.com/getting-started/semantic-ve
 * 1.0.3 Add env variable for refocus url
 * 1.0.4 Uglify for production
 * 1.0.5 Update bdk to 1.6.1
+* 1.0.6 Use public npm bdk.
