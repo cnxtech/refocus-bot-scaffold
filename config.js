@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017, salesforce.com, inc.
+ * Copyright (c) 2018, salesforce.com, inc.
  * All rights reserved.
  * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root or
@@ -14,6 +14,8 @@
  */
 
 module.exports = {
+  env: process.env.NODE_ENV || 'dev',
+  port: process.env.PORT || DEFAULT_PORT,
   dev: {
     refocusUrl: process.env.REFOCUS_URL ||
       'http://localhost:3000',

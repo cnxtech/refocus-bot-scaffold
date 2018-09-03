@@ -18,7 +18,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var App = require('./components/App.jsx');
 
-const env = process.env.NODE_ENV || 'dev';
+const { env } = require('../config.js');
 const config = require('../config.js')[env];
 const bdk = require('@salesforce/refocus-bdk')(config);
 const botName = require('../package.json').name;
@@ -43,7 +43,7 @@ function handleEvents(event) {
  * @return null
  */
 function handleSettings(room) {
-  bdk.log.debug(botName + ' Settings Change', event);
+  bdk.log.debug(botName + ' Settings Change', room);
 }
 
 /**
