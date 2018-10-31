@@ -6,9 +6,11 @@
  * https://opensource.org/licenses/BSD-3-Clause
  */
 
+/* eslint no-process-env: 0 */
+
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin'); //creates index.html folder and puts it in dist folder
-const webpack = require('webpack');
+// Creates index.html folder and puts it in dist folder
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const ZipPlugin = require('zip-webpack-plugin');
 const env = process.env.NODE_ENV || 'dev';
@@ -16,7 +18,7 @@ const url = require('./config.js')[env].refocusUrl;
 const botName = require('./package.json').name;
 const Uglify = require('uglifyjs-webpack-plugin');
 
-var config = {
+const config = {
 
   entry: './web/index.js',
 
@@ -31,8 +33,9 @@ var config = {
       {
         test: /\.(js|jsx)$/,
         use: 'babel-loader?compact=true',
-        include: [path.resolve(__dirname, 'lib'), path.resolve(__dirname, 'web')]
-      }, //code transformer (if file is .js)
+        include: [path.resolve(__dirname, 'lib'),
+          path.resolve(__dirname, 'web')]
+      }, // Code transformer (if file is .js)
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']

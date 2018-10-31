@@ -13,6 +13,8 @@
  *
  */
 
+/* eslint no-process-env: 0 */
+
 const DEFAULT_PORT = 5000;
 
 module.exports = {
