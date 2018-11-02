@@ -12,13 +12,11 @@
  * This code handles will listen to refocus and handle any activity
  * that requires the bot server attention.
  */
-'use strict';
 
 require('dotenv').config();
 const express = require('express');
 const app = express();
 const http = require('http');
-const io = require('socket.io-client');
 const path = require('path');
 const { env } = require('./config.js');
 const PORT = require('./config.js').port;
@@ -34,7 +32,6 @@ bdk.installOrUpdateBot(packageJSON);
  * When a refocus.events is dispatch it is handled here.
  *
  * @param {Event} event - The most recent event object
- * @return null
  */
 function handleEvents(event){
   bdk.log.debug('Event', event);
@@ -44,7 +41,6 @@ function handleEvents(event){
  * When a refocus.room.settings is dispatch it is handled here.
  *
  * @param {Room} room - Room object that was dispatched
- * @return null
  */
 function handleSettings(room){
   bdk.log.debug('Settings Change', room);
@@ -54,7 +50,6 @@ function handleSettings(room){
  * When a refocus.bot.data is dispatch it is handled here.
  *
  * @param {BotData} data - Bot Data object that was dispatched
- * @return null
  */
 function handleData(data){
   bdk.log.realtime('Bot Data', data);
@@ -64,7 +59,6 @@ function handleData(data){
  * When a refocus.bot.actions is dispatch it is handled here.
  *
  * @param {BotAction} action - Bot Action object that was dispatched
- * @return null
  */
 function handleActions(action){
   bdk.log.realtime('Bot Action', action);

@@ -74,3 +74,4 @@ Follows [semantic versioning](https://docs.npmjs.com/getting-started/semantic-ve
 * 1.0.4 Uglify for production
 * 1.0.5 Update bdk to 1.6.1
 * 1.0.6 Use public npm bdk.
+* 1.0.7 Clean up linting and add initial testing framework.
