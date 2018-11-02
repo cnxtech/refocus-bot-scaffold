@@ -55,6 +55,8 @@ Note: If you want to test this locally you will need some environment variables:
 ### Examples Bots
 * Timeline-Bot - https://github.com/salesforce/refocus-bot-timeline
 * Weather-Tutorial-Bot - https://github.com/salesforce/refocus-bot-weather-tutorial
+* Participants-Bot - https://github.com/salesforce/refocus-bot-participants
+* Oncall-Bot - https://github.com/salesforce/refocus-bot-oncall
 
 ### Contributing
 If you have any ideas on how this project could be improved, please feel free. The steps involved are:
