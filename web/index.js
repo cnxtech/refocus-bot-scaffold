@@ -76,7 +76,6 @@ function init() {
   renderUI();
 }
 
-
 // Event Handling
 document.body.addEventListener('refocus.room.settings', handleSettings, false);
 document.getElementById(botName)
