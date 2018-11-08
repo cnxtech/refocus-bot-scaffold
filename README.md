@@ -1,9 +1,7 @@
 # Refocus Bot Scaffold
 
 ## Overview
-This repo is a scaffold project to help develop bots for refocus rooms using the Refocus Bot Development Kit [BDK](git.soma.salesforce.com/Refocus-Bots/refocus-bdk). Refocus rooms, described here (https://salesforce.quip.com/OeDwAuLM0tQA), are collaberative channels in which people and bots interact to resolve service issues. So this project is to help develop bots for Refocus that will have ablity to interact with external APIs and the Refocus rooms.
-
-To read a step by step guide how to create a new Bot go to [this wiki.](https://git.soma.salesforce.com/pages/Refocus-Bots/Docs/)
+This repo is a scaffold project to help develop bots for refocus rooms using the Refocus Bot Development Kit [BDK](https://github.com/salesforce/refocus-bdk). Refocus rooms are collaberative channels in which people and bots interact to resolve service issues. So this project is to help develop bots for Refocus that will have ablity to interact with external APIs and the Refocus rooms.
 
 ## Features
 * Templates ```package.json``` for bot development
