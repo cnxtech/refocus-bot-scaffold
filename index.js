@@ -26,7 +26,11 @@ const packageJSON = require('./package.json');
 const bdk = require('@salesforce/refocus-bdk')(config);
 
 // Installs / Updates the Bot
-bdk.installOrUpdateBot(packageJSON);
+bdk.installOrUpdateBot(packageJSON).then(() => {
+  bdk.refocusConnect(app, socketToken, packageJSON.name);
+}).catch((err) => {
+  bdk.log.error(err);
+});
 
 /**
  * When a refocus.events is dispatch it is handled here.
@@ -65,7 +69,6 @@ function handleActions(action){
 }
 
 // Event Handling
-bdk.refocusConnect(app, socketToken, packageJSON.name);
 app.on('refocus.events', handleEvents);
 app.on('refocus.bot.actions', handleActions);
 app.on('refocus.bot.data', handleData);
